@@ -1,8 +1,9 @@
 import dummy from '../db/data.json';
 import { useParams } from 'react-router-dom';
+import Word from './Word';
 
 export default function Day() {
-  const { day } = useParams(); //문자자
+  const { day } = useParams(); //문자
   const wordList = dummy.words.filter((word) => word.day === Number(day)); //day 는 숫자라 Number
   return (
     <>
@@ -10,10 +11,7 @@ export default function Day() {
       <table>
         <tbody>
           {wordList.map((word) => (
-            <tr key={word.id}>
-              <td>{word.eng}</td>
-              <td>{word.kor}</td>
-            </tr>
+            <Word word={word} key={word.id} />
           ))}
         </tbody>
       </table>
