@@ -1,50 +1,84 @@
 {
   "days": [
-    { "id": 1, "day": 1 },
-    { "id": 2, "day": 2 },
-    { "id": 3, "day": 3 }
+    {
+      "id": "1",
+      "day": 1
+    },
+    {
+      "id": "2",
+      "day": 2
+    },
+    {
+      "id": "3",
+      "day": 3
+    },
+    {
+      "id": "3835",
+      "day": 4
+    }
   ],
   "words": [
     {
-      "id": 1,
+      "id": "1",
       "day": 1,
       "eng": "book",
       "kor": "책",
-      "isDone": false
+      "isDone": true
     },
     {
-      "id": 2,
-      "day": 1,
-      "eng": "apple",
-      "kor": "사과",
-      "isDone": false
-    },
-    {
-      "id": 3,
-      "day": 2,
-      "eng": "pen",
-      "kor": "펜",
-      "isDone": false
-    },
-    {
-      "id": 4,
+      "id": "4",
       "day": 2,
       "eng": "banana",
       "kor": "바나나",
-      "isDone": false
+      "isDone": true
     },
     {
-      "id": 5,
-      "day": 3,
-      "eng": "school",
-      "kor": "학교",
-      "isDone": false
-    },
-    {
-      "id": 6,
+      "id": "6",
       "day": 3,
       "eng": "house",
       "kor": "집",
+      "isDone": false
+    },
+    {
+      "id": "cad3",
+      "day": "1",
+      "eng": "mirror",
+      "kor": "거울",
+      "isDone": false
+    },
+    {
+      "id": "51ea",
+      "day": "3",
+      "eng": "cat",
+      "kor": "고양이",
+      "isDone": false
+    },
+    {
+      "id": "3d77",
+      "day": "2",
+      "eng": "mouse",
+      "kor": "쥐",
+      "isDone": false
+    },
+    {
+      "id": "d212",
+      "day": "3",
+      "eng": "word",
+      "kor": "단어",
+      "isDone": false
+    },
+    {
+      "id": "435b",
+      "day": "1",
+      "eng": "cookie",
+      "kor": "쿠키",
+      "isDone": false
+    },
+    {
+      "id": "9491",
+      "day": "4",
+      "eng": "year",
+      "kor": "년",
       "isDone": false
     }
   ]
