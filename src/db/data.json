@@ -80,6 +80,13 @@
       "eng": "year",
       "kor": "년",
       "isDone": false
+    },
+    {
+      "id": "fa98",
+      "day": "3",
+      "eng": "gold",
+      "kor": "금",
+      "isDone": false
     }
   ]
 }

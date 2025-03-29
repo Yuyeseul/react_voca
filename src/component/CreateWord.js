@@ -1,36 +1,37 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import { useNavigate } from 'react-router-dom';
 
 export default function CreateWord() {
   const days = useFetch(`http://localhost:3001/days`);
   const navigate = useNavigate();
+  const [isLoding, setIsLoding] = useState(false);
 
   // 기본 새로고침 막아줌
   function onSubmit(e) {
     e.preventDefault();
 
-    console.log(engRef.current.value);
-    console.log(korRef.current.value);
-    console.log(dayRef.current.value);
-
-    fetch(`http://localhost:3001/words/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        day: dayRef.current.value,
-        eng: engRef.current.value,
-        kor: korRef.current.value,
-        isDone: false,
-      }),
-    }).then((res) => {
-      if (res.ok) {
-        alert('생성이 완료 되었습니다.');
-        navigate(`/day/${dayRef.current.value}`);
-      }
-    });
+    if (!isLoding) {
+      setIsLoding(true);
+      fetch(`http://localhost:3001/words/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          day: dayRef.current.value,
+          eng: engRef.current.value,
+          kor: korRef.current.value,
+          isDone: false,
+        }),
+      }).then((res) => {
+        if (res.ok) {
+          alert('생성이 완료 되었습니다.');
+          navigate(`/day/${dayRef.current.value}`);
+          setIsLoding(false);
+        }
+      });
+    }
   }
 
   const engRef = useRef(null);
@@ -57,7 +58,13 @@ export default function CreateWord() {
           ))}
         </select>
       </div>
-      <button>저장</button>
+      <button
+        style={{
+          opacity: isLoding ? 0.3 : 1,
+        }}
+      >
+        {isLoding ? 'Saving...' : '저장'}
+      </button>
     </form>
   );
 }
